@@ -1,0 +1,44 @@
+.headernav {
+  padding: 2.2rem 2.2rem 2rem 2.2rem;
+  position: fixed;
+  background: #fff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.headernav__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headernav__item:nth-child(1) {
+  position: relative;
+}
+
+.headernav__item:nth-child(2) {
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+.headernav__active.headernav__item svg path,
+.headernav__active.headernav__item {
+  fill: #675AA5;
+  color: #675AA5;
+}
+
+.fixedbox-74 {
+  height: 74px;
+}
+
+.headernav__menucheckbox {
+  visibility: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.headernav__menucheckbox:checked + .hamburgermenu {
+  margin-left: 0;
+}

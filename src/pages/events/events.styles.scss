@@ -1,0 +1,82 @@
+.eventspage {
+
+  &__events {
+    margin-top: 2rem;
+    padding: 0 2.2rem 0 3.2rem;
+  }
+}
+
+.event {
+  display: flex;
+  //border-bottom: 1px solid red;
+
+  &__progressbar {
+    width: 9px;
+    background: #E4E4E4;
+    margin-right: 2.8rem;
+    position: relative;
+  }
+
+  &__progress {
+    width: 100%;
+    height: 100%;
+    background: #675AA5;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__content {
+    min-width: 20rem;
+    max-width: 32rem;
+    padding: .8rem 1.5rem;
+    background: rgba(103, 90, 165, 0.08);
+    border-radius: 0 6px 6px 6px;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  &__triangle {
+    position: absolute;
+    top: 0;
+    left: -.8rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+    height: 1.1rem;
+    width: .8rem;
+    background: rgba(103, 90, 165, 0.08);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    font-family: Roboto, sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+    color: #B4B4B4;
+  }
+
+  &__description {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    color: #675AA5DD;
+    margin-top: .7rem;
+  }
+
+  &:first-child &__progressbar::after {
+    content: '';
+    width: 21px;
+    height: 21px;
+    background: #675AA5;
+    position: absolute;
+    top: -15px;
+    left: calc(-50% - 1.5px);
+    border-radius: 50%;
+  }
+
+  &:last-child &__progressbar {
+    border-radius: 0 0 5px 5px;
+    width: 9px;
+  }
+}

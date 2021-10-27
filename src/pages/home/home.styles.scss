@@ -1,0 +1,81 @@
+.homepage {
+
+
+  &__quicklinks {
+    padding: 1rem 2.2rem;
+
+    &--head {
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 3rem;
+      color: #000000;
+      margin-bottom: 1.5rem;
+    }
+
+    &--links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &--link a {
+      display: inline-block;
+      padding: .8rem 2rem;
+      background: #675AA5;
+      border-radius: 11px;
+      font-weight: 500;
+      font-size: 1.9rem;
+      line-height: 2.7rem;
+      color: #FFFFFF;
+      text-decoration: none;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__gallery {
+    padding: 1.5rem 2.2rem;
+    margin-bottom: 2rem;
+
+    &--head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    &--title {
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 3rem;
+      color: #000000;
+    }
+
+    &--images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1rem;
+    }
+
+    &--image {
+      height: 0;
+      padding-bottom: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &--morebtn {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      color: rgba(103, 90, 165, 0.6);
+
+      span {
+        margin-right: 1rem;
+      }
+    }
+  }
+}

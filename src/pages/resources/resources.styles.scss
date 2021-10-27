@@ -1,0 +1,56 @@
+.resourcepage {
+  &__content {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.resource {
+  padding: 1.2rem 2.2rem;
+  border-top: 1px solid #E3E3E3;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: currentColor;
+
+  &__content {
+    margin-left: 1.7rem;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+
+  &__info {
+    font-size: 1.4rem;
+    color: #A3A3A3;
+  }
+
+  &__type {
+    margin-right: 1.8rem;
+    position: relative;
+  }
+
+  &__type::after {
+    content: '';
+    height: 4px;
+    width: 4px;
+    background: #C4C4C4;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    right: -1rem;
+    transform: translateY(-50%);
+  }
+
+  &:last-child {
+    border-bottom: 1px solid #E3E3E3;
+  }
+
+  &:active {
+    background: rgba(#675AA5, 0.2);
+  }
+}
