@@ -7,12 +7,12 @@ import './resources.styles.scss';
 const dateGenerator = dateobj => format(dateobj, 'do MMM, yyyy');
 
 const studyMaterial = [
-    {title: 'SOCHUM Study Guide', type: 'PDF', date: new Date(Date.now()), link: 'https://a.com'},
-    {title: 'SOCHUM Study Guide', type: 'PDF', date: new Date(Date.now()), link: 'https://a.com'},
-    {title: 'SOCHUM Study Guide', type: 'PDF', date: new Date(Date.now()), link: 'https://a.com'},
-    {title: 'SOCHUM Study Guide', type: 'PDF', date: new Date(Date.now()), link: 'https://a.com'},
-    {title: 'SOCHUM Study Guide', type: 'PDF', date: new Date(Date.now()), link: 'https://a.com'},
-    {title: 'SOCHUM Study Guide', type: 'PDF', date: new Date(Date.now()), link: 'https://a.com'}
+    {name: 'SOCHUM Study Guide', type: 'PDF', date: new Date(Date.now()), link: 'https://a.com'},
+    {name: 'SOCHUM Study Guide', type: 'PDF', date: new Date(Date.now()), link: 'https://a.com'},
+    {name: 'SOCHUM Study Guide', type: 'PDF', date: new Date(Date.now()), link: 'https://a.com'},
+    {name: 'SOCHUM Study Guide', type: 'PDF', date: new Date(Date.now()), link: 'https://a.com'},
+    {name: 'SOCHUM Study Guide', type: 'PDF', date: new Date(Date.now()), link: 'https://a.com'},
+    {name: 'SOCHUM Study Guide', type: 'PDF', date: new Date(Date.now()), link: 'https://a.com'}
 ]
 
 const ResourcesPage = () => {
@@ -25,7 +25,7 @@ const ResourcesPage = () => {
                     <a href={data.link} target='_blank' className="resource" key={index} rel='noreferrer'>
                         <PDFIconSVG />
                         <div className="resource__content">
-                            <div className="resource__title">{data.title}</div>
+                            <div className="resource__title">{data.name}</div>
                             <div className="resource__info">
                                 <span className="resource__type">{data.type}</span>
                                 <span className="resource__date">{dateGenerator(data.date)}</span>

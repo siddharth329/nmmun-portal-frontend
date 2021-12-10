@@ -19,6 +19,7 @@
   text-decoration: none;
   color: #CECECE;
   font-size: 1.3rem;
+  position: relative;
 }
 
 .bottomnav__linkgroup div {
@@ -31,4 +32,13 @@
 .bottomnav__active.bottomnav__linkgroup {
   fill: #675AA5;
   color: #675AA5;
+}
+
+.bottomnav__highlight {
+  position: absolute;
+  background: rgba(#675AA5, 0.2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
 }

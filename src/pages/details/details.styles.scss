@@ -1,0 +1,91 @@
+.detailspage {
+
+  &__content {
+    padding: 1rem 2.2rem;
+  }
+}
+
+.secretariat {
+  &__head {
+    font-weight: 600;
+    font-size: 1.9rem;
+    line-height: 2.7rem;
+    color: #000000;
+    margin-bottom: 1.6rem;
+  }
+}
+
+.secretariatcard {
+  background: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 2rem 2.6rem 2.2rem 2.6rem;
+  margin-bottom: 1.7rem;
+
+  &__header {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+
+  &__avatar-box {
+    margin-right: 2.7rem;
+    height: 7rem;
+    width: 7rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 500;
+  }
+
+  &__position {
+    font-size: 1.7rem;
+    line-height: 2.4rem;
+    color: #000000;
+  }
+
+  &__name {
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+    color: #727272;
+  }
+
+  &__content {
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+    color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.detailcards {
+  margin-top: 3rem;
+
+  &__head {
+    font-weight: 600;
+    font-size: 1.9rem;
+    line-height: 2.7rem;
+    color: #000000;
+    margin-bottom: 1.6rem;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+  }
+
+  &__image {
+    height: 0;
+    padding-bottom: 100%;
+    background-position: center;
+    background-size: cover;
+    background-color: black;
+    border-radius: 4px;
+  }
+}

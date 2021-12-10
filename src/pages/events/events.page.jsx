@@ -7,6 +7,7 @@ import './events.styles.scss';
 const TEMP_EVENTS = [
     {id: 1, date: new Date(Date.now() - 10000000000), description: 'Event Started'},
     {id: 2, date: new Date(Date.now() - 10000), description: 'Orientation'},
+    {id: 4, date: new Date(Date.now() - 10000), description: 'Orientation'},
     {id: 3, date: new Date(Date.now() + 10000000000), description: 'Training Session will be held.'}
 ]
 
