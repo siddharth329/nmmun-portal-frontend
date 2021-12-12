@@ -1,4 +1,5 @@
 import {Component} from "react";
+import {motion} from "framer-motion";
 import HeaderNavComponent from "../../components/header-nav/header-nav.component";
 import './details.styles.scss';
 
@@ -30,8 +31,13 @@ class DetailsPage extends Component {
             <div className="secretariat">
                 <div className="secretariat__head">SECRETARIAT</div>
                 <div className="secretariat__content">
-                    {members.map(member => (
-                        <div className="secretariatcard">
+                    {members.map((member, index) => (
+                        <motion.div
+                            className="secretariatcard"
+                            initial={{opacity: 0, x: 10}}
+                            animate={{opacity: 1, x: 0}}
+                            transition={{duration: 0.3, delay: (index + 1) * 0.1}}
+                        >
                             <div className="secretariatcard__header">
                                 <div
                                     className="secretariatcard__avatar-box"
@@ -47,7 +53,7 @@ class DetailsPage extends Component {
                             <div className="secretariatcard__content">
                                 {member.description}
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
@@ -62,6 +68,7 @@ class DetailsPage extends Component {
                     {members.map(member => (
                         <div
                             className="detailcards__image"
+                            // style={{backgroundImage: `url(${image1})`}}
                             style={{backgroundImage: `url(${member.image})`}}
                         >
                             &nbsp;

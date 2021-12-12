@@ -1,4 +1,5 @@
 import {format} from "date-fns";
+import {motion} from "framer-motion";
 
 import HeaderNavComponent from "../../components/header-nav/header-nav.component";
 import {ReactComponent as PDFIconSVG} from '../../assets/icons/pdficon.svg';
@@ -17,12 +18,28 @@ const studyMaterial = [
 
 const ResourcesPage = () => {
     return (
-        <div className="resourcespage">
+        <motion.div
+            className="resourcespage"
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            transition={{duration: 0.7}}
+        >
             <HeaderNavComponent title='Resources'/>
 
             <div className="resourcepage__content">
                 {studyMaterial.map((data, index) => (
-                    <a href={data.link} target='_blank' className="resource" key={index} rel='noreferrer'>
+                    <motion.a
+                        href={data.link}
+                        target='_blank'
+                        className="resource"
+                        key={index}
+                        rel='noreferrer'
+
+                        initial={{opacity: 0, y: 50}}
+                        animate={{opacity: 1, y: 0}}
+                        transition={{duration: 0.3, delay: (index + 1) * 0.1}}
+                    >
                         <PDFIconSVG />
                         <div className="resource__content">
                             <div className="resource__title">{data.name}</div>
@@ -31,10 +48,10 @@ const ResourcesPage = () => {
                                 <span className="resource__date">{dateGenerator(data.date)}</span>
                             </div>
                         </div>
-                    </a>
+                    </motion.a>
                 ))}
             </div>
-        </div>
+        </motion.div>
     )
 }
 

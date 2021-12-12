@@ -10,6 +10,7 @@ import SupportPage from "./pages/support/support.page";
 import DetailsPage from "./pages/details/details.page";
 import NotificationsPage from "./pages/notifications/notifications.page";
 import GalleryPage from "./pages/gallery/gallery.page";
+import BlogsPage from "./pages/blogs/blogs.page";
 
 
 class App extends React.Component {
@@ -19,6 +20,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
+        generateTokenForMessaging();
         if (process.env.NODE_ENV === 'production') {
             generateTokenForMessaging();
         }
@@ -35,6 +37,7 @@ class App extends React.Component {
                     <Route exact path='/details' component={DetailsPage}/>
                     <Route exact path='/notifications' component={NotificationsPage}/>
                     <Route exact path='/gallery' component={GalleryPage}/>
+                    <Route exact path='/blogs' component={BlogsPage} />
                 </LayoutContainer>
             </BrowserRouter>
         );

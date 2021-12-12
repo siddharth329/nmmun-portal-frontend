@@ -1,0 +1,56 @@
+.notificationspage {
+
+  &__notifications {
+    padding: 0 2.6rem;
+    margin-top: 1.4rem;
+  }
+}
+
+.notification {
+  background: rgba(103, 90, 165, 0.1);
+  box-sizing: border-box;
+  border-radius: 1rem;
+  padding: 1.4rem 2.1rem 1.9rem 2.1rem;
+  margin-bottom: 1.9rem;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.1rem;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+    color: #675AA5;
+  }
+
+  &__date {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    color: #BCBCBC;
+  }
+
+  &__body {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  &--critical {
+    background: rgba(255, 0, 0, 0.07);
+    border: none;
+
+    .notification__title {
+      color: #FF5D5D;
+    }
+  }
+
+  &--new {
+    border: 1px solid rgba(103, 90, 165, 0.4);
+  }
+}

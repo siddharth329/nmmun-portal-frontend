@@ -1,7 +1,7 @@
 .detailspage {
 
   &__content {
-    padding: 1rem 2.2rem;
+    padding: 1rem 0 1rem 2.2rem;
   }
 }
 
@@ -21,6 +21,7 @@
   border-radius: 6px;
   padding: 2rem 2.6rem 2.2rem 2.6rem;
   margin-bottom: 1.7rem;
+  margin-right: 2.2rem;
 
   &__header {
     display: flex;
@@ -65,6 +66,7 @@
 
 .detailcards {
   margin-top: 3rem;
+  margin-right: 2.1rem;
 
   &__head {
     font-weight: 600;

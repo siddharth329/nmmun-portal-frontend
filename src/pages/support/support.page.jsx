@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {motion, AnimatePresence} from "framer-motion";
 
 import HeaderNavComponent from "../../components/header-nav/header-nav.component";
 import {ReactComponent as AccordianPlusIconSVG} from "../../assets/icons/accordianplusicon.svg";
@@ -60,7 +61,13 @@ const SupportPage = () => {
     }, []);
 
     return (
-        <div className='supportpage'>
+        <motion.div
+            className='supportpage'
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            transition={{duration: 0.7}}
+        >
             <HeaderNavComponent title='Help & Support'/>
             <div className="supportpage__content">
                 <div className="supportpage__heading">
@@ -76,8 +83,14 @@ const SupportPage = () => {
                 <div className="faqs">
                     <div className="faqs__head">FAQ</div>
                     <div className="faqs__content">
-                        {faqs.map(faq => (
-                            <div className="faq" key={faq.id}>
+                        {faqs.map((faq, index) => (
+                            <motion.div
+                                className="faq"
+                                key={faq.id}
+                                initial={{opacity: 0, y: 50}}
+                                animate={{opacity: 1, y: 0}}
+                                transition={{duration: 0.3, delay: (index + 1) * 0.1}}
+                            >
                                 <div
                                     className="faq__head"
                                     onClick={() => faqOpened === faq.id ? setFaqOpened(null) : setFaqOpened(faq.id)}
@@ -85,8 +98,21 @@ const SupportPage = () => {
                                     <div className="faq__question">{faq.question}</div>
                                     {faqOpened === faq.id ? <AccordianCrossIconSVG/> : <AccordianPlusIconSVG/>}
                                 </div>
-                                <div className={`faq__answer ${faqOpened === faq.id && 'faq__opened'}`}>{faq.answer}</div>
-                            </div>
+                                <AnimatePresence>
+                                    {faqOpened === faq.id && (
+                                        <motion.div
+                                            className={`faq__answer faq__opened`}
+                                            // className={`faq__answer ${faqOpened === faq.id && 'faq__opened'}`}
+                                            initial={{opacity: 0, height: 0}}
+                                            animate={{opacity: 1, height: 'auto'}}
+                                            exit={{opacity: 0, height: 0}}
+                                            transition={{duration: 0.3}}
+                                        >
+                                            {faq.answer}
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
@@ -98,7 +124,7 @@ const SupportPage = () => {
                 <a href='mailto:help@nmmun.in' className="supportpage__cta">Send a message</a>
                 <a href='mailto:help@nmmunportal.in' className="supportpage__cta-mini">Trouble using application?</a>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

@@ -15,7 +15,14 @@ const BottomNavComponent = () => {
     return (
         <Fragment>
             <div style={{height: `76px`}}>&nbsp;</div>
-            <div className="bottomnav" id='bottomnav' style={{paddingBottom: window.navigator.appVersion.includes('iPhone') ? '2.1rem' : '1.3rem'}}>
+            <div
+                className="bottomnav"
+                id='bottomnav'
+                style={{paddingBottom: window.navigator.appVersion.includes('iPhone') ? '2.1rem' : '1.3rem'}}
+                // initial={{y: 50, opacity: 0, background: '#fff'}}
+                // animate={{y: 0, opacity: 1}}
+                // transition={{duration: 0.4}}
+            >
                 <NavLink exact to='/' className="bottomnav__linkgroup" activeClassName='bottomnav__active'>
                     <HomeIconSVG/>
                     <div className="bottomnav__linkname">Home</div>
