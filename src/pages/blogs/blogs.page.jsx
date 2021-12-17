@@ -1,6 +1,8 @@
 import HeaderNavComponent from "../../components/header-nav/header-nav.component";
 import {format} from "date-fns";
 
+import './blogs.styles.scss';
+
 const TEMP_BLOGS = [
     {
         id: 0,
@@ -19,8 +21,11 @@ const BlogsPage = () => {
             <div className="blogspage__blogs">
                 {TEMP_BLOGS.map(blog => (
                     <div className="blogcard">
-                        <div className="blogcard__image-box">
-                            <img src={blog.image_cover} alt={blog.name} className="blogcard__image"/>
+                        <div
+                            className="blogcard__image-box"
+                            style={{backgroundImage: `url(${blog.image_cover})`}}
+                        >
+                            &nbsp;{/*<img src={blog.image_cover} alt={blog.name} className="blogcard__image"/>*/}
                         </div>
                         <div className="blogcard__details">
                             <div className="blogcard__head">

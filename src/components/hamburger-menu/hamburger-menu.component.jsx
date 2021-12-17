@@ -4,7 +4,7 @@ import './hamburger-menu.styles.scss';
 
 const HAMBURGER_MENU_LINKS = [
     {name: 'About', url: '/about'},
-    {name: 'Blog', url: '/blog'},
+    {name: 'Blog', url: '/blogs'},
     {name: 'Committee', url: '/committee'},
     {name: 'Team', url: '/team'},
     {name: 'Resources', url: '/resources'},

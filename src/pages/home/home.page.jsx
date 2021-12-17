@@ -35,7 +35,7 @@ class HomePage extends Component {
                 <div className="homepage__quicklinks">
                     <div className="homepage__quicklinks--head">Quick Links</div>
                     <ul className="homepage__quicklinks--links">
-                        <li className="homepage__quicklinks--link"><Link to='/blog'>Blog</Link></li>
+                        <li className="homepage__quicklinks--link"><Link to='/blogs'>Blog</Link></li>
                         <li className="homepage__quicklinks--link"><Link to='/about'>About</Link></li>
                         <li className="homepage__quicklinks--link"><Link to='/committee'>Committee</Link></li>
                         <li className="homepage__quicklinks--link"><Link to='/details'>Team</Link></li>
