@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from "react";
+import axios from 'axios';
 import LoaderComponent from "../../components/loader/loader.component";
 import HeaderNavComponent from "../../components/header-nav/header-nav.component";
 
@@ -26,7 +27,15 @@ const TEMP_IMAGES = [
 class GalleryPage extends Component {
     constructor(props) {
         super(props);
-        this.state = {images: TEMP_IMAGES}
+        this.state = {images: TEMP_IMAGES, loading: true}
+    }
+
+    async componentDidMount() {
+        const gallery = async () => {
+            const response = await axios.get('https://tanejasiddharth.pythonanywhere.com/api/gallery/');
+            this.setState({images: response.data, loading: false})
+        }
+        await gallery()
     }
 
     generateGalleryPattern = (imagesObj) => {
@@ -54,7 +63,7 @@ class GalleryPage extends Component {
                     <div
                         key={`galleryimage-${image.id}`}
                         className={`gallerygrid__image`}
-                        style={{backgroundImage: `url(${image.url})`}}
+                        style={{backgroundImage: `url(https://tanejasiddharth.pythonanywhere.com${image.url})`}}
                         onClick={() => window.open(image.url)}
                     >
                         &nbsp;
@@ -80,7 +89,7 @@ class GalleryPage extends Component {
                     <div
                         key={`galleryimage-${image.id}`}
                         className={`gallerygrid__image gallerygrid__image--${index + 1}`}
-                        style={{backgroundImage: `url(${image.url})`, backgroundPosition: 'center'}}
+                        style={{backgroundImage: `url(https://tanejasiddharth.pythonanywhere.com${image.url})`, backgroundPosition: 'center'}}
                         onClick={() => window.open(image.url)}
                     >
                         &nbsp;
@@ -94,7 +103,9 @@ class GalleryPage extends Component {
         return (
             <div className="gallerypage">
                 <HeaderNavComponent title='Gallery' />
-                {this.generateGalleryPattern(this.state.images)}
+                {this.state.loading ? (
+                    <div>Loading</div>
+                ) : this.generateGalleryPattern(this.state.images) }
             </div>
         )
     }
