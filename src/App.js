@@ -21,9 +21,9 @@ class App extends React.Component {
 
     componentDidMount() {
         // generateTokenForMessaging();
-        if (process.env.NODE_ENV === 'production') {
-            generateTokenForMessaging();
-        }
+        // if (process.env.NODE_ENV === 'production') {
+        //     generateTokenForMessaging();
+        // }
     }
 
     render() {
