@@ -58,8 +58,9 @@ let deferredPrompt;
 
 self.addEventListener('beforeinstallprompt', (e) => {
     // Prevent Chrome 67 and earlier from automatically showing the prompt
-    e.preventDefault();
+    // e.preventDefault();
     // Stash the event so it can be triggered later.
+    console.log('APPLICATION READY TO INSTALL, FIRING UP WORKER')
     deferredPrompt = e;
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt

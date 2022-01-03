@@ -1,7 +1,7 @@
 import React from "react";
 import LayoutContainer from "./containers/layout/layout.component";
 import {BrowserRouter, Route} from 'react-router-dom';
-import {generateTokenForMessaging} from "./configs/firebase";
+// import {generateTokenForMessaging} from "./configs/firebase";
 
 import HomePage from './pages/home/home.page';
 import ResourcesPage from './pages/resources/resources.page';
@@ -21,9 +21,9 @@ class App extends React.Component {
 
     componentDidMount() {
         // generateTokenForMessaging();
-        if (process.env.NODE_ENV === 'production') {
-            generateTokenForMessaging();
-        }
+        // if (process.env.NODE_ENV === 'production') {
+        //     generateTokenForMessaging();
+        // }
     }
 
     render() {
